@@ -1,12 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-import Card from './components/Card'
+import WorkoutCard from './components/Card'
+import Title from './components/Title'
+import Card from 'react-bootstrap/Card';
 
 function App() {
+
   return (
     <div className="App">
       
-      <Card />
+      <Title />
+      <WorkoutCard />
 
     </div>
   );

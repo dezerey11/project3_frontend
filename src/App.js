@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import MainPage from './pages/MainPage';
 
 function App() {
 
@@ -14,38 +15,7 @@ function App() {
     <div className="App">
       
       <Title />
-
-      <Container fluid>
-        <Row>
-          <Col>
-            <WorkoutCard />
-          </Col>
-
-          <Col>
-            <WorkoutCard />
-          </Col>
-
-          <Col>
-            <WorkoutCard />
-          </Col>
-          <Col>
-            <WorkoutCard />
-          </Col>
-
-          <Col>
-            <WorkoutCard />
-          </Col>
-
-          <Col>
-            <WorkoutCard />
-          </Col>
-          
-          <Col>
-            <WorkoutCard />
-          </Col>
-        </Row>
-      </Container>
-      
+      <MainPage />
 
     </div>
   );

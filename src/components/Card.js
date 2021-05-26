@@ -7,19 +7,19 @@ import Col from 'react-bootstrap/Col'
 
 function WorkoutCard(props) {
   return (
-    <Container>
-      <Row>
-        <Col>
-          <Card>
-            <Card.Header as="h5">Monday</Card.Header>
-            <Card.Body>
-              <Card.Title>Workout Title</Card.Title>
-              <Button variant="primary">View Workout</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+    
+    //Reference material:
+    //https://react-bootstrap.github.io/components/cards/
+
+    <Card>
+      <Card.Header as="h5"><strong>Monday</strong></Card.Header>
+      <Card.Body>
+        <Card.Title>Workout Title</Card.Title>
+        <br></br>
+        <Button variant="primary">View Workout</Button>
+      </Card.Body>
+    </Card>
+        
   );
 }
 

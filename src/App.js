@@ -1,23 +1,52 @@
 import logo from './logo.svg';
 import './App.css';
+import WorkoutCard from './components/Card'
+import Title from './components/Title'
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <Title />
+
+      <Container fluid>
+        <Row>
+          <Col>
+            <WorkoutCard />
+          </Col>
+
+          <Col>
+            <WorkoutCard />
+          </Col>
+
+          <Col>
+            <WorkoutCard />
+          </Col>
+          <Col>
+            <WorkoutCard />
+          </Col>
+
+          <Col>
+            <WorkoutCard />
+          </Col>
+
+          <Col>
+            <WorkoutCard />
+          </Col>
+          
+          <Col>
+            <WorkoutCard />
+          </Col>
+        </Row>
+      </Container>
+      
+
     </div>
   );
 }

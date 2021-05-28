@@ -10,6 +10,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+
 export const GlobalCtx = React.createContext(null);
 
 function MainPage(props) {
@@ -17,6 +18,7 @@ function MainPage(props) {
     url: "https://exercise-log-app-backend-dev.herokuapp.com/",
     token: null,
   });
+
 
   const logout = (
     <Link
@@ -37,6 +39,7 @@ function MainPage(props) {
       setGState({ ...gState, token: token.token });
     }
   }, []);
+
 
   //array to loop for Cards. Will pass days as props and URL
   const daysOfTheWeek = [

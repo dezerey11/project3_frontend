@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-function WorkoutCard(props) {
+function DayCard(props) {
 
   return (
     
@@ -18,7 +18,9 @@ function WorkoutCard(props) {
         <Card.Body>
           <Card.Title>Workout Title</Card.Title>
           <br></br>
-          <Button variant="primary">View Workout</Button>
+          <Link to={`/workout/${props.day}`}>
+            <Button variant="primary">View Workout</Button>
+          </Link>
         </Card.Body>
       </Card>
     </>
@@ -26,4 +28,4 @@ function WorkoutCard(props) {
   );
 }
 
-export default WorkoutCard;
+export default DayCard;

@@ -13,6 +13,8 @@ function MainPage(props) {
   //array to loop for Cards. Will pass days as props and URL
   const daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
+  //https://exercise-log-app-backend-dev.herokuapp.com/
+
     return(
     <>
 

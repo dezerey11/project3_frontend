@@ -20,14 +20,14 @@ function App() {
 
     <Switch>
 
-      {/* <Route path="/">
+      <Route path="/">
         <Title />
         <MainPage />
-      </Route>  */}
-
-      <Route path="/">
-        <IndividualWorkoutPage />
       </Route> 
+
+      {/* <Route path="/">
+        <IndividualWorkoutPage />
+      </Route>  */}
 
     </Switch>
       

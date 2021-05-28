@@ -6,19 +6,22 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 function WorkoutCard(props) {
+
   return (
     
-    //Reference material:
+    //Reference material for styling:
     //https://react-bootstrap.github.io/components/cards/
-
-    <Card>
-      <Card.Header as="h5"><strong>Monday</strong></Card.Header>
-      <Card.Body>
-        <Card.Title>Workout Title</Card.Title>
-        <br></br>
-        <Button variant="primary">View Workout</Button>
-      </Card.Body>
-    </Card>
+    
+    <>
+      <Card>
+        <Card.Header as="h5"><strong>{props.day}</strong></Card.Header>
+        <Card.Body>
+          <Card.Title>Workout Title</Card.Title>
+          <br></br>
+          <Button variant="primary">View Workout</Button>
+        </Card.Body>
+      </Card>
+    </>
         
   );
 }

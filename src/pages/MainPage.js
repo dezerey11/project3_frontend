@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import {Link} from 'react-router-dom'
-import WorkoutCard from '../components/Card'
+import DayCard from '../components/DayCard'
 import Title from '../components/Title'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -25,7 +25,7 @@ function MainPage(props) {
           {/* this map loops though each day and creates a column for each. Passes the day as a prop.*/}
           {daysOfTheWeek.map((individualDay, i) => (
             <Col>
-              <WorkoutCard day={individualDay}/>
+              <DayCard day={individualDay}/>
             </Col>
           ))}
         </Row>

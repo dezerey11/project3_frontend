@@ -3,6 +3,11 @@ import './App.css';
 import WorkoutCard from './components/Card'
 import Title from './components/Title'
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import MainPage from './pages/MainPage';
 
 function App() {
 
@@ -10,7 +15,7 @@ function App() {
     <div className="App">
       
       <Title />
-      <WorkoutCard />
+      <MainPage />
 
     </div>
   );

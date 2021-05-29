@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 import { GlobalCtx } from "./MainPage";
 
 const Login = (props) => {
@@ -53,7 +55,12 @@ const Login = (props) => {
           value={form.password}
           onChange={handleChange}
         />
-        <input type="submit" value="Login" />
+        <br />
+        <input type="submit" value="LOGIN" />
+        <br />
+        <Link to="signup">
+          <Button variant="primary">SIGN UP</Button>
+        </Link>
       </form>
     </div>
   );

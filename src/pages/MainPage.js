@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link, Route, Switch } from "react-router-dom";
+import { Link, Route, Switch, Redirect } from "react-router-dom";
 import Login from "./Login";
 import WorkoutCard from "../components/Card";
 import Title from "../components/Title";
@@ -72,7 +72,7 @@ function MainPage(props) {
                   {gState.token ? logout : null}
                 </div>
               ) : (
-                <Route path="/login" />
+                <Redirect to="/login" />
               )
             }
           />

@@ -1,85 +1,61 @@
 import React from "react";
 import { useState } from "react";
-import { Link, Route, Switch, Redirect } from "react-router-dom";
-import Login from "./Login";
+import { Link, Route, Switch, Redirect, useHistory } from "react-router-dom";
 import WorkoutCard from "../components/Card";
-import Title from "../components/Title";
-import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { GlobalCtx } from "../App";
 
-export const GlobalCtx = React.createContext(null);
+//array to loop for Cards. Will pass days as props and URL
+const daysOfTheWeek = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 
 function MainPage(props) {
-  const [gState, setGState] = React.useState({
-    url: "https://exercise-log-app-backend-dev.herokuapp.com/",
-    token: null,
-  });
+  const history = useHistory();
+  const { gState, setGState } = React.useContext(GlobalCtx);
 
-  const logout = (
-    <Link
-      onClick={() => {
-        window.localStorage.removeItem("token");
-        setGState({ ...gState, token: null });
-      }}
-    >
-      {" "}
-      <h2>Logout</h2>{" "}
-    </Link>
-  );
-
-  //Check if user is logged in
-  React.useEffect(() => {
-    const token = JSON.parse(window.localStorage.getItem("token"));
-    if (token) {
-      setGState({ ...gState, token: token.token });
-    }
-  }, []);
-
-  //array to loop for Cards. Will pass days as props and URL
-  const daysOfTheWeek = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  console.log(gState);
+  if (!gState.ready) {
+    return null;
+  }
+  if (!gState.token) {
+    history.push("/login");
+    return null;
+  }
 
   return (
-    <GlobalCtx.Provider value={{ gState, setGState }}>
-      <>
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={(rp) =>
-              gState.token ? (
-                <div>
-                  <Container fluid>
-                    <Row>
-                      {/* this map loops though each day and creates a column for each. Passes the day as a prop.*/}
-                      {daysOfTheWeek.map((individualDay, i) => (
-                        <Col>
-                          <WorkoutCard day={individualDay} />
-                        </Col>
-                      ))}
-                    </Row>
-                  </Container>
-                  {gState.token ? logout : null}
-                </div>
-              ) : (
-                <Redirect to="/login" />
-              )
-            }
-          />
-          <Route path="/login" render={(rp) => <Login {...rp} />} />
-        </Switch>
-      </>
-    </GlobalCtx.Provider>
+    <div>
+      <Container fluid>
+        <Row>
+          {/* this map loops though each day and creates a column for each. Passes the day as a prop.*/}
+          {daysOfTheWeek.map((individualDay) => (
+            <Col key={individualDay}>
+              <WorkoutCard day={individualDay} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
+      <Link to="/login">
+        <Button
+          variant="primary"
+          onClick={() => {
+            window.localStorage.removeItem("token");
+            setGState({ ...gState, token: null });
+          }}
+        >
+          LOG OUT
+        </Button>
+      </Link>
+    </div>
   );
 }
 

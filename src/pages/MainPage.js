@@ -22,8 +22,7 @@ const daysOfTheWeek = [
 function MainPage(props) {
   const history = useHistory();
   const { gState, setGState } = React.useContext(GlobalCtx);
-
-  console.log(gState);
+  
   if (!gState.ready) {
     return null;
   }

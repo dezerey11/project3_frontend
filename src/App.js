@@ -26,6 +26,7 @@ function App() {
 
   return (
     <div className="App">
+
       <Title />
       <GlobalCtx.Provider value={{ gState, setGState }}>
         <Switch>
@@ -33,6 +34,7 @@ function App() {
           <Route path="/login" render={(rp) => <Login {...rp} />} />
         </Switch>
       </GlobalCtx.Provider>
+
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import Login from "./Login";
-import WorkoutCard from "../components/Card";
+import WorkoutCard from "../components/WorkoutCard";
 import Title from "../components/Title";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";

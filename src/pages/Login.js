@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { GlobalCtx } from "./MainPage";
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
+import { GlobalCtx } from "../App";
 
 const Login = (props) => {
   const { gState, setGState } = React.useContext(GlobalCtx);
@@ -53,7 +55,12 @@ const Login = (props) => {
           value={form.password}
           onChange={handleChange}
         />
-        <input type="submit" value="Login" />
+        <br />
+        <Button as="input" type="submit" value="LOGIN"></Button>
+        <br />
+        <Link to="signup">
+          <Button variant="primary">SIGN UP</Button>
+        </Link>
       </form>
     </div>
   );

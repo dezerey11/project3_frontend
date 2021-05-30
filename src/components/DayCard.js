@@ -18,7 +18,7 @@ function DayCard(props) {
         <Card.Body>
           <Card.Title>Workout Title</Card.Title>
           <br></br>
-          <Link to={`/workout/${props.day}`}>
+          <Link to={`/workout/`}>
             <Button variant="primary">View Workout</Button>
           </Link>
         </Card.Body>

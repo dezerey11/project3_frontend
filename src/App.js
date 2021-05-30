@@ -4,6 +4,7 @@ import Title from "./components/Title";
 import MainPage from "./pages/MainPage";
 import Login from "./pages/Login";
 import "./App.css";
+import IndividualWorkoutPage from "./pages/IndividualWorkoutPage";
 
 export const GlobalCtx = React.createContext(null);
 
@@ -32,6 +33,7 @@ function App() {
         <Switch>
           <Route exact path="/" render={(rp) => <MainPage {...rp} />} />
           <Route path="/login" render={(rp) => <Login {...rp} />} />
+          <Route path="/workout/" render={(rp) => <IndividualWorkoutPage {...rp} />} />
         </Switch>
       </GlobalCtx.Provider>
 

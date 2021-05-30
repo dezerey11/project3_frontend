@@ -1,7 +1,12 @@
 import React from "react";
 import { useState } from "react";
+//import { Link, Route, Switch } from "react-router-dom";
+import Login from "./Login";
+import DayCard from "../components/DayCard";
+import Title from "../components/Title";
+import Card from "react-bootstrap/Card";
 import { Link, Route, Switch, Redirect, useHistory } from "react-router-dom";
-import WorkoutCard from "../components/Card";
+import WorkoutCard from "../components/WorkoutCard";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -38,7 +43,7 @@ function MainPage(props) {
           {/* this map loops though each day and creates a column for each. Passes the day as a prop.*/}
           {daysOfTheWeek.map((individualDay) => (
             <Col key={individualDay}>
-              <WorkoutCard day={individualDay} />
+              <DayCard day={individualDay} />
             </Col>
           ))}
         </Row>

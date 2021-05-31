@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import React from "react"
 import { GlobalCtx } from "../App";
+//import MainPage from "../pages/MainPage";
 
 function WorkoutCard(props) {
 
@@ -32,7 +33,7 @@ function WorkoutCard(props) {
 
     
     const id = props.match.params.id
-    const people = props
+    // const people = props
     
     
 

@@ -74,10 +74,10 @@ function MainPage(props) {
              <Col >
               <DayCard title={workout[2].title ? workout[2].title : "Rest Day"} day={daysOfTheWeek[2]} id={workout[2]._id}/>
             </Col>
-            <Col >
+            {/* <Col >
               <DayCard title={workout[3].title ? workout[3].title : "Rest Day"} day={daysOfTheWeek[3]}/>
-            </Col>
-            <Col >
+            </Col> */}
+            {/* <Col >
               <DayCard title={workout[4].title ? workout[4].title : "Rest Day"} day={daysOfTheWeek[4]}/>
             </Col>
             <Col >
@@ -85,7 +85,7 @@ function MainPage(props) {
             </Col>
             <Col >
               <DayCard title={workout[4].title ? workout[4].title : "Rest Day"} day={daysOfTheWeek[0]}/> 
-            </Col>
+            </Col> */}
         </Row>
       </Container> )
   }
@@ -96,33 +96,7 @@ function MainPage(props) {
   return (
     <div>
       {workout ? loaded() : loading() }
-      {/*<Container fluid>
-        <Row>
-            <Col >
-              <DayCard title={workout[0].title} day={daysOfTheWeek[0]}/>
-            </Col>
-            <Col >
-              <DayCard day={daysOfTheWeek[1]}/>
-            </Col>
-             <Col >
-              <DayCard title={workout[2].title} day={daysOfTheWeek[2]}/>
-            </Col>
-            <Col >
-              <DayCard title={workout[3].title} day={daysOfTheWeek[3]}/>
-            </Col>
-            <Col >
-              <DayCard title={workout[4].title} day={daysOfTheWeek[4]}/>
-            </Col>
-            <Col >
-              <DayCard title={workout[0].title} day={daysOfTheWeek[5]}/>
-            </Col>
-            <Col >
-              <DayCard title={workout[0].title} day={daysOfTheWeek[6]}/> 
-            </Col> */}
 
-            
-          
-        
       <Link to="/login">
         <Button
           variant="primary"

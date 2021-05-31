@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { GlobalCtx } from "../App";
@@ -46,7 +46,8 @@ const Login = (props) => {
           type="text"
           name="username"
           value={form.username}
-          onChange={handleChange}cfu
+          onChange={handleChange}
+          cfu
         />
         <h1>Password</h1>
         <input

@@ -27,16 +27,17 @@ function App() {
 
   return (
     <div className="App">
-
       <Title />
       <GlobalCtx.Provider value={{ gState, setGState }}>
         <Switch>
           <Route exact path="/" render={(rp) => <MainPage {...rp} />} />
           <Route path="/login" render={(rp) => <Login {...rp} />} />
-          <Route path="/workout/" render={(rp) => <IndividualWorkoutPage {...rp} />} />
+          <Route
+            path="/workout/:id"
+            render={(rp) => <IndividualWorkoutPage {...rp} />}
+          />
         </Switch>
       </GlobalCtx.Provider>
-
     </div>
   );
 }

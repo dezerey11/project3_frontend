@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { GlobalCtx } from "../App";
+import Form from 'react-bootstrap/Form'
 
 const Login = (props) => {
   const { gState, setGState } = React.useContext(GlobalCtx);
@@ -40,7 +41,7 @@ const Login = (props) => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <h1>Username</h1>
         <input
           type="text"
@@ -55,13 +56,27 @@ const Login = (props) => {
           value={form.password}
           onChange={handleChange}
         />
-        <br />
-        <Button as="input" type="submit" value="LOGIN"></Button>
-        <br />
-        <Link to="signup">
-          <Button variant="primary">SIGN UP</Button>
-        </Link>
-      </form>
+        <input type="submit" value="Login" />
+      </form> */}
+      <Form onSubmit={handleSubmit}>
+        <Form.Group>
+        <Form.Label size="lg">Username</Form.Label>
+        <Form.Control
+          type="text"
+          name="username"
+          value={form.username}
+          onChange={handleChange}cfu
+        />
+        <Form.Label>Password</Form.Label>
+        <Form.Control
+          type="password"
+          name="password"
+          value={form.password}
+          onChange={handleChange}
+        />
+        <Button type="submit" variant="primary">Submit</Button>
+        </Form.Group>
+      </Form>
     </div>
   );
 };

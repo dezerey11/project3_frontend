@@ -15,6 +15,9 @@ function App() {
     ready: false,
   });
 
+  const [workout, setWorkout] = React.useState(null)
+  const [title, setTitle] = React.useState(null)
+
   //Check if user is logged in
   React.useEffect(() => {
     const token = JSON.parse(window.localStorage.getItem("token"));
@@ -24,6 +27,8 @@ function App() {
       setGState({ ...gState, token: null, ready: true });
     }
   }, []);
+
+  
 
   return (
     <div className="App">

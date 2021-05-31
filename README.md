@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Workout Tracker App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Authors:** Dezerey Escanuelas, Carson Fuhs, Adewale J Dada, Marialaina Preciado
 
-## Available Scripts
+## LINK TO APP
 
-In the project directory, you can run:
+https://exercise-log-app-frontend-main.herokuapp.com/
 
-### `npm start`
+## TECHNOLOGIES USED
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- HTML
+- CSS
+- Javascript
+- React
+- Bootstrap
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## PROJECT SUMMARY
 
-### `npm test`
+The Workout Tracker App allows a user to save their workout routine for the week.
+This project was created by a team of students in the General Assembly Software Engineering Immersive course. This repository is for the frontend of this app.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## APPROACH TAKEN
 
-### `npm run build`
+A user is able to see a login or signup page when they open the link to the app. When the user signs up, their information is stored in a database. JSON Web Tokens (JWT) were used to authorize the user’s request while they are logged in. The user is now shown the main page with the seven days of the week in cards that were styled with Bootstrap. Each card has a “view workout” button which when clicked, displays a page with an empty form that the user can fill in and save. Once the card is filled, the user will also have the ability to edit or clear the workout from that card.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## USER STORIES
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- As a user, I am able to create an account so that I am able to log in to use the app.
+- As a user, I am shown a page that will show my workouts for the week so that I can keep track of my exercise routine.
+- As a user, I have the ability to create my workout for the chosen day so that I can plan my workouts for the week.
+- As a user, I have the ability to edit and clear my workout for the chosen day so that I can change my workout routine for the week.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## SCREEN SHOTS
 
-### `npm run eject`
+coming soon
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## WIREFRAMES
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Login Page**
+![Login Page](images/LoginPage.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Signup Page**
+![Signup Page](images/SignupPage.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Main Page**
+![Main Page](images/MainPage.png)
 
-## Learn More
+**View Workout Page**
+![View Workout](images/ViewWorkoutPage.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## FUTURE UPDATES
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- create an error page for when username or password does not match
+- add a button to view the previous or next week
+- add a button to clear the entire week
+- add more styling

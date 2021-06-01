@@ -61,6 +61,7 @@ function NewWorkout(props) {
     <div className="workoutCard">
       <br />
       <br />
+      <Container fluid='sm'>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="exampleForm.ControlInput1">
           <Form.Label>Workout Title</Form.Label>
@@ -91,6 +92,7 @@ function NewWorkout(props) {
           </Row>
         </Container>
       </Form>
+      </Container>
     </div>
   );
 }

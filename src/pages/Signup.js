@@ -21,7 +21,7 @@ const Signup = (props) => {
             event.preventDefault();
             const {username, password} = form;
 
-            fetch(`${url}auth/login`, {
+            fetch(`${url}auth/signup`, {
                 method: "post",
                 headers: {
                   "Content-Type": "application/json",

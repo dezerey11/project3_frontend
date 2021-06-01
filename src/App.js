@@ -5,6 +5,8 @@ import MainPage from "./pages/MainPage";
 import Login from "./pages/Login";
 import "./App.css";
 import IndividualWorkoutPage from "./pages/IndividualWorkoutPage";
+import NewWorkout from "./pages/NewWorkout";
+
 
 export const GlobalCtx = React.createContext(null);
 
@@ -27,16 +29,18 @@ function App() {
 
   return (
     <div className="App">
-
       <Title />
       <GlobalCtx.Provider value={{ gState, setGState }}>
         <Switch>
           <Route exact path="/" render={(rp) => <MainPage {...rp} />} />
           <Route path="/login" render={(rp) => <Login {...rp} />} />
-          <Route path="/workout/" render={(rp) => <IndividualWorkoutPage {...rp} />} />
+          <Route
+            path="/workout/:id"
+            render={(rp) => <IndividualWorkoutPage {...rp} />}
+          />
+          <Route path="/new" render={(rp) => <NewWorkout {...rp}  />} />
         </Switch>
       </GlobalCtx.Provider>
-
     </div>
   );
 }

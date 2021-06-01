@@ -1,22 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
-import WorkoutCard from './components/Card'
-import Title from './components/Title'
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import MainPage from './pages/MainPage';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import Title from "./components/Title";
+import MainPage from "./pages/MainPage";
+import Login from "./pages/Login";
+import "./App.css";
+import IndividualWorkoutPage from "./pages/IndividualWorkoutPage";
+import NewWorkout from "./pages/NewWorkout";
+
+
+export const GlobalCtx = React.createContext(null);
 
 function App() {
+  const [gState, setGState] = React.useState({
+    url: "https://exercise-log-app-backend-dev.herokuapp.com/",
+    token: null,
+    ready: false,
+  });
+
+  //Check if user is logged in
+  React.useEffect(() => {
+    const token = JSON.parse(window.localStorage.getItem("token"));
+    if (token) {
+      setGState({ ...gState, token: token.token, ready: true });
+    } else {
+      setGState({ ...gState, token: null, ready: true });
+    }
+  }, []);
 
   return (
     <div className="App">
-      
       <Title />
-      <MainPage />
+      <GlobalCtx.Provider value={{ gState, setGState }}>
+        <Switch>
+          <Route exact path="/" render={(rp) => <MainPage {...rp} />} />
+          <Route path="/login" render={(rp) => <Login {...rp} />} />
+          <Route
+            path="/workout/:id"
+            render={(rp) => <IndividualWorkoutPage {...rp} />}
+          />
+          <Route path="/new" render={(rp) => <NewWorkout {...rp}  />} />
 
+        </Switch>
+      </GlobalCtx.Provider>
     </div>
   );
 }

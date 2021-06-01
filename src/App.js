@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Title from "./components/Title";
 import MainPage from "./pages/MainPage";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import "./App.css";
 import IndividualWorkoutPage from "./pages/IndividualWorkoutPage";
 import NewWorkout from "./pages/NewWorkout";
@@ -34,6 +35,7 @@ function App() {
         <Switch>
           <Route exact path="/" render={(rp) => <MainPage {...rp} />} />
           <Route path="/login" render={(rp) => <Login {...rp} />} />
+          <Route path="/signup" render={(rp) => <Signup {...rp} />} />
           <Route
             path="/workout/:id"
             render={(rp) => <IndividualWorkoutPage {...rp} />}

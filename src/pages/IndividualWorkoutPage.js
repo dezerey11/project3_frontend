@@ -73,19 +73,13 @@ function IndividualWorkoutPage(props) {
 
   return (
     <>
-      <Container fluid="sm">
-        <Row>
-          <Col>
-
+    <Container fluid="sm">
             <WorkoutCard
               {...workout}
               updateWorkout={updateWorkout}
               deleteWorkout={deleteWorkout}
             />
-
-          </Col>
-        </Row>
-      </Container>
+    </Container>
     </>
   );
 }

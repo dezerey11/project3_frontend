@@ -5,6 +5,10 @@ const Signup = (props) => {
         const {gState, setGState} = React.useContext(GlobalCtx)
         const {url} = gState
 
+        const blank = {
+            username: "",
+            password: ""        }
+
         const [form, setForm] = React.useState({
             username: "",
             password: ""
@@ -13,18 +17,51 @@ const Signup = (props) => {
             setForm({...form, [event.target.name]: event.target.value})
         }
 
+        const handleSubmit = (event) => {
+            event.preventDefault();
+            const {username, password} = form;
+
+            fetch(`${url}auth/login`, {
+                method: "post",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ username, password }),
+              })
+              .then((response) => response.json())
+              .then((data) => {
+                console.log(data);
+                setForm(blank)
+                props.history.push("/login")
+              });
+        }
+
     return (
         <div>
             <h1>Sign up</h1>
             <br />
-            <form>
+            <form onSubmit={handleSubmit} >
                 <h3>Username</h3>
-                <input type="text" name="username" value={form.username} onChange={handleChange} />
+                <input 
+                type="text" 
+                name="username" 
+                value={form.username} 
+                onChange={handleChange} 
+                />
                 <h3>Password</h3>
-                <input type="password" name="password" value={form.password} onChange={handleChange} />
+                <input 
+                type="password" 
+                name="password" 
+                value={form.password} 
+                onChange={handleChange} 
+                />
                 <br/>
                 <br/>
-                <input type="submit" name="signup" />
+                <input 
+                type="submit" 
+                name="signup"
+                value="Sign Up!" 
+                />
 
             </form>
         </div>

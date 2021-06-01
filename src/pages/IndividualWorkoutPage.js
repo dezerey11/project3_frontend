@@ -14,6 +14,7 @@ function IndividualWorkoutPage(props) {
 
   const [workout, setWorkout] = useState(null);
 
+
   const getWorkout = async () => {
     const response = await fetch(URL + props.match.params.id, {
       method: "GET",
@@ -75,11 +76,13 @@ function IndividualWorkoutPage(props) {
       <Container fluid="sm">
         <Row>
           <Col>
+
             <WorkoutCard
               {...workout}
               updateWorkout={updateWorkout}
               deleteWorkout={deleteWorkout}
             />
+
           </Col>
         </Row>
       </Container>

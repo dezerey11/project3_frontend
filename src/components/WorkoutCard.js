@@ -1,3 +1,4 @@
+
 import Form from "react-bootstrap/Form";
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
@@ -7,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import React from "react";
 
 function WorkoutCard(props) {
+
   const [title, setTitle] = useState(props.title);
   const [text, setText] = useState(props.text);
 
@@ -43,12 +45,14 @@ function WorkoutCard(props) {
     <div className="workoutCard">
       <br />
       <br />
+
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="exampleForm.ControlInput1">
           <Form.Label>Workout Title</Form.Label>
           <Form.Control
             type="text"
             placeholder={props.title}
+
             name="title"
             value={title}
             onChange={handleTitleChange}
@@ -60,7 +64,9 @@ function WorkoutCard(props) {
             as="textarea"
             rows={10}
             placeholder={props.text}
+
             name="text"
+
             value={text}
             onChange={handleTextChange}
           />
@@ -68,13 +74,17 @@ function WorkoutCard(props) {
         <Container>
           <Row>
             <Col>
+
               <Button variant="danger" onClick={handleDelete}>
+
                 Clear Workout
               </Button>
             </Col>
             <Col>
               <Button variant="primary" type="submit">
+
                 Update Workout
+
               </Button>
             </Col>
           </Row>
@@ -84,3 +94,4 @@ function WorkoutCard(props) {
   );
 }
 export default WorkoutCard;
+

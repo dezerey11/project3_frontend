@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { useState } from "react";
 //import { Link, Route, Switch } from "react-router-dom";
@@ -12,6 +13,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { GlobalCtx } from "../App";
+
 
 const URL = "https://exercise-log-app-backend-dev.herokuapp.com/workouts/";
 
@@ -32,6 +34,7 @@ function MainPage(props) {
       .then((response) => response.json())
       .then((data) => setWorkouts(data));
   };
+
 
   // if the state of token changes and the token is not ready and there
   // is no token then redirect to login
@@ -74,6 +77,12 @@ function MainPage(props) {
           }}
         >
           LOG OUT
+        </Button>
+      </Link>
+
+      <Link to="/new">
+        <Button >
+          Add Workout
         </Button>
       </Link>
     </div>

@@ -26,8 +26,8 @@ function NewWorkout(props) {
       };
 
     const [newForm, setNewForm] = useState({
-        title: "title state",
-        text: "text state",
+        title: "",
+        text: "",
         date: "",
     });
   

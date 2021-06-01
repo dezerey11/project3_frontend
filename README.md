@@ -56,7 +56,6 @@ A user is able to see a log in or sign up page when they open the link to the ap
 
 ## FUTURE UPDATES
 
-- add a sign up page
 - make a weekly tracker
 - add a button to view the previous or next week
 - add a button to clear the entire week

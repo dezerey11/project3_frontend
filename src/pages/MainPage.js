@@ -58,6 +58,8 @@ function MainPage(props) {
 
   return (
     <div>
+    <br/>
+    <br/>
       <Container fluid>
         <Row>
           {/* this map loops though each workout and creates a column for each. */}
@@ -68,9 +70,12 @@ function MainPage(props) {
           ))}
         </Row>
       </Container>
+      <br/>
+      <br/>
+      <br/>
       <Link to="/login">
         <Button
-          variant="primary"
+          variant="danger"
           onClick={() => {
             window.localStorage.removeItem("token");
             setGState({ ...gState, token: null });
@@ -78,7 +83,7 @@ function MainPage(props) {
         >
           LOG OUT
         </Button>
-      </Link>
+      </Link>{' '}
 
       <Link to="/new">
         <Button >

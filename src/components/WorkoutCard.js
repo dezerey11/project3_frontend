@@ -45,7 +45,6 @@ function WorkoutCard(props) {
     <div className="workoutCard">
       <br />
       <br />
-
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="exampleForm.ControlInput1">
           <Form.Label>Workout Title</Form.Label>

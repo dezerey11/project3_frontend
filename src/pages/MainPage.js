@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { useState } from "react";
 //import { Link, Route, Switch } from "react-router-dom";
@@ -12,6 +13,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { GlobalCtx } from "../App";
+
 
 const URL = "https://exercise-log-app-backend-dev.herokuapp.com/workouts/";
 
@@ -54,8 +56,6 @@ function MainPage(props) {
     return null;
   }
 
-
-
   return (
     <div>
       <Container fluid>
@@ -79,6 +79,7 @@ function MainPage(props) {
           LOG OUT
         </Button>
       </Link>
+
       <Link to="/new">
         <Button >
           Add Workout
@@ -87,4 +88,5 @@ function MainPage(props) {
     </div>
   );
 }
+
 export default MainPage;

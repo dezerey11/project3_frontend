@@ -7,6 +7,7 @@ import "./App.css";
 import IndividualWorkoutPage from "./pages/IndividualWorkoutPage";
 import NewWorkout from "./pages/NewWorkout";
 
+
 export const GlobalCtx = React.createContext(null);
 
 function App() {

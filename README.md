@@ -30,7 +30,7 @@ A user is able to see a log in or sign up page when they open the link to the ap
 - As a user, I am able to edit a workout so that I can make changes to an existing workout.
 - As a user, I am able to clear a workout so that I can remove a workout I no longer need.
 
-## SCREEN SHOTS
+## SCREENSHOTS
 
 ![Login Page](images/loginPageSS.png)
 

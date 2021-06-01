@@ -14,6 +14,7 @@ function IndividualWorkoutPage(props) {
 
   const [workout, setWorkout] = useState(null);
 
+
   const getWorkout = async () => {
     const response = await fetch(URL + props.match.params.id, {
       method: "GET",
@@ -46,12 +47,42 @@ function IndividualWorkoutPage(props) {
     return null;
   }
 
+  const updateWorkout = async (workout, id) => {
+    // make the put request to update a person
+    await fetch(URL + id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + gState.token,
+      },
+      body: JSON.stringify(workout),
+    });
+    props.history.push("/");
+  };
+
+  const deleteWorkout = async (id) => {
+    await fetch(URL + id, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + gState.token,
+      },
+    });
+    props.history.push("/");
+  };
+
   return (
     <>
       <Container fluid="sm">
         <Row>
           <Col>
-            <WorkoutCard {...workout} />
+
+            <WorkoutCard
+              {...workout}
+              updateWorkout={updateWorkout}
+              deleteWorkout={deleteWorkout}
+            />
+
           </Col>
         </Row>
       </Container>

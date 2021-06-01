@@ -39,6 +39,7 @@ function App() {
             render={(rp) => <IndividualWorkoutPage {...rp} />}
           />
           <Route path="/new" render={(rp) => <NewWorkout {...rp}  />} />
+
         </Switch>
       </GlobalCtx.Provider>
     </div>

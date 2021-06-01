@@ -8,8 +8,9 @@ import Col from "react-bootstrap/Col";
 import React from "react";
 
 function WorkoutCard(props) {
-  const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
+
+  const [title, setTitle] = useState(props.title);
+  const [text, setText] = useState(props.text);
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
@@ -18,16 +19,41 @@ function WorkoutCard(props) {
     setText(event.target.value);
   };
 
+  // handle for when form is submitted
+  const handleSubmit = (event) => {
+    // to prevent refresh
+    event.preventDefault();
+    // update the workout
+    props.updateWorkout(
+      {
+        title,
+        text,
+      },
+      props._id
+    );
+  };
+
+  // handle for when you click on clear workout
+  const handleDelete = (event) => {
+    // to prevent refresh
+    event.preventDefault();
+    // delete the workout
+    props.deleteWorkout(props._id);
+  };
+
   return (
     <div className="workoutCard">
       <br />
       <br />
-      <Form>
+
+      <Form onSubmit={handleSubmit}>
         <Form.Group controlId="exampleForm.ControlInput1">
           <Form.Label>Workout Title</Form.Label>
           <Form.Control
             type="text"
             placeholder={props.title}
+
+            name="title"
             value={title}
             onChange={handleTitleChange}
           />
@@ -38,6 +64,9 @@ function WorkoutCard(props) {
             as="textarea"
             rows={10}
             placeholder={props.text}
+
+            name="text"
+
             value={text}
             onChange={handleTextChange}
           />
@@ -45,13 +74,17 @@ function WorkoutCard(props) {
         <Container>
           <Row>
             <Col>
-              <Button variant="danger" type="submit">
+
+              <Button variant="danger" onClick={handleDelete}>
+
                 Clear Workout
               </Button>
             </Col>
             <Col>
               <Button variant="primary" type="submit">
-                Save Workout
+
+                Update Workout
+
               </Button>
             </Col>
           </Row>
